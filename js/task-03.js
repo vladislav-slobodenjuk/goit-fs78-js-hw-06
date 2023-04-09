@@ -14,6 +14,9 @@ const images = [
 ];
 
 const gallery = document.querySelector(".gallery");
+gallery.style.margin = 0;
+gallery.style.padding = 0;
+gallery.style.listStyle = "none";
 
 const markup = images
   .map(
