@@ -13,22 +13,21 @@ const images = [
   },
 ];
 
-const gallery = document.querySelector(".gallery");
-gallery.style.margin = 0;
-gallery.style.padding = 0;
-gallery.style.listStyle = "none";
+const galleryEl = document.querySelector(".gallery");
+galleryEl.style.margin = 0;
+galleryEl.style.padding = 0;
+galleryEl.style.listStyle = "none";
 
-const markup = images
-  .map(
-    (img) =>
-      `<li class="gallery-img">
-        <img
-          src=${img.url}
-          alt=${img.alt}
-          width=400
-        />
-      </li>`
-  )
-  .join("");
+function makeMarkup({ url, alt }) {
+  return `<li class="gallery-item">
+            <img
+              src=${url}
+              alt=${alt}
+              width=400
+            />
+          </li>`;
+}
 
-gallery.insertAdjacentHTML("beforeend", markup);
+const markup = images.map(makeMarkup).join("");
+
+galleryEl.insertAdjacentHTML("beforeend", markup);

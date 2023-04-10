@@ -1,11 +1,11 @@
-const input = document.querySelector("#name-input");
-const name = document.querySelector("#name-output");
+const inputEl = document.querySelector("#name-input");
+const outputEl = document.querySelector("#name-output");
 
 function onInput({ currentTarget: { value } }) {
-  // function onInput(e) {
   // const value = e.currentTarget.value;
-  input.textContent = value;
-  value === "" ? (name.textContent = "Anonymous") : (name.textContent = value);
+  value === ""
+    ? (outputEl.textContent = "Anonymous")
+    : (outputEl.textContent = value);
 }
 
-input.addEventListener("input", onInput);
+inputEl.addEventListener("input", onInput);
