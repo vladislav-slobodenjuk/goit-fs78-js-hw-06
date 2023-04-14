@@ -32,7 +32,7 @@ function createBoxes(amount) {
   ancestorEl.appendChild(fragment);
 }
 
-function onImputChange({ currentTarget: { value } }) {
+function onInputChange({ currentTarget: { value } }) {
   currentAmount = value;
 }
 
@@ -50,6 +50,6 @@ function onHandleDestroyClick() {
   currentAmount = 1;
 }
 
-inputEl.addEventListener("input", onImputChange);
+inputEl.addEventListener("input", onInputChange);
 createBtnEl.addEventListener("click", onHandleCreateClick);
 destroyBtnEl.addEventListener("click", onHandleDestroyClick);

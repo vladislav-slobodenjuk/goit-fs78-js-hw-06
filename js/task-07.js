@@ -3,8 +3,8 @@ const textEl = document.querySelector("#text");
 
 textEl.style.fontSize = `${inputEl.value}px`;
 
-function onImputChange({ currentTarget: { value } }) {
+function onInputChange({ currentTarget: { value } }) {
   textEl.style.fontSize = `${value}px`;
 }
 
-inputEl.addEventListener("input", onImputChange);
+inputEl.addEventListener("input", onInputChange);
