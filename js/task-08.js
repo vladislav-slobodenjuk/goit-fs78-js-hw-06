@@ -1,6 +1,4 @@
 const formEl = document.querySelector(".login-form");
-const emailEl = document.querySelector("[name='email']");
-const passEl = document.querySelector("[name='password']");
 
 function onFormSubmit(e) {
   e.preventDefault();
@@ -13,8 +11,7 @@ function onFormSubmit(e) {
   const password = e.currentTarget.elements.password.value;
 
   if (email.length === 0 || password.length === 0) {
-    alert("fill in both fields");
-    return;
+    return alert("fill in both fields");
   }
 
   // console.log(result);
