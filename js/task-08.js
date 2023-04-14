@@ -1,24 +1,27 @@
 const formEl = document.querySelector(".login-form");
-const emailEl = document.querySelector("[name='email']");
-const passEl = document.querySelector("[name='password']");
 
 function onFormSubmit(e) {
   e.preventDefault();
 
-  // let result = {};
-  // const formData = new FormData(e.currentTarget);
-  // formData.forEach((a, b) => (result[b] = a));
+  const formData = new FormData(e.currentTarget);
+  const data = {};
+  formData.forEach((value, key) => (data[key] = value));
 
-  const email = e.currentTarget.elements.email.value;
-  const password = e.currentTarget.elements.password.value;
+  const { email, password } = e.currentTarget.elements;
 
-  if (email.length === 0 || password.length === 0) {
+  if (email.value.length === 0 || password.value.length === 0) {
     alert("fill in both fields");
     return;
   }
 
-  // console.log(result);
-  console.log({ email, password });
+  // Object.values(data).forEach((value) => {
+  //   if (value.length === 0) {
+  //     alert("fill in both fields");
+  //     return;
+  //   }
+  // });
+
+  console.log(data);
   formEl.reset();
 }
 
